@@ -1,0 +1,23 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ?background-color: blueviolet; */
+}
+
+.firstdog-section{
+    font-family: 'Lobster', cursive;
+}
+
+
+
+.select-img-section {
+    width: 300px;
+    height: 250px;
+}
+
+.icon-image img {
+    width: 50px;
+}
