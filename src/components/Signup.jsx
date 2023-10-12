@@ -1,18 +1,10 @@
 import React, { useState } from "react"
-
 import { useNavigate  , Link } from "react-router-dom"
 import { Button , Form } from "react-bootstrap" 
 import Signupimg from "../images/signupimg.jpg"
 import { auth } from '../firebase'
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import Login from "../components/Login"
-
-const inputValue = {
-        email: "",
-        username: "",
-        password: ""
-}
-
+// import Login from "../components/Login"
 
 
 function Signup( ){
@@ -20,7 +12,7 @@ function Signup( ){
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false)
-  const {error, setError} = useState("")
+  // const [error, setError] = useState("")
   // const history = useHistory()
   const navigate = useNavigate()
 

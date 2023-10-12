@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
+import { getFirestore, collection, getDocs, onSnapshot } from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyD0RzNVD7pZP8Lwj4o0nUwzfpuLm_kTPFQ",
@@ -14,5 +15,32 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
+const db = getFirestore(app)
+const colRef = collection(db, 'dogs')
 
-export {auth};
+
+
+
+  //  real time data
+onSnapshot(colRef, (snapshot) =>{
+  let dogs = []
+    snapshot.docs.forEach((doc) => {
+      dogs.push({ ...doc.data(), id:doc.id })
+      console.log(dogs);
+    })
+})
+export {auth, colRef, db};
+
+
+// geting documents from firebase
+// getDocs(colRef)
+//   .then((snapshot) => {
+//     let dogs = []
+//     snapshot.docs.forEach((doc) => {
+//       dogs.push({ ...doc.data(), id:doc.id })
+//       console.log(dogs);
+      
+//   })
+//   }).catch(err => {
+//     console.log(err.message);
+//   })

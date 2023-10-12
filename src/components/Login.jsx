@@ -1,5 +1,5 @@
 import React , { useState } from "react";
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Button , Form } from "react-bootstrap"
 import LoginImg from "../images/login-img.jpg"
 import { auth } from '../firebase'
@@ -11,7 +11,7 @@ function Login(){
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState()
+    // const [error, setError] = useState()
 
     const navigate = useNavigate()
 
